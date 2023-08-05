@@ -4,6 +4,7 @@
     --primario: #78403c;
     --blanco: #ffffff;
     --negro: #000;
+    --gris: #e1e1e1
 }
 html {
     box-sizing: border-box;
@@ -29,6 +30,7 @@ a {
 }
 h1, h2, h3, h4 {
     font-family: var(--fuenteHeading);
+    line-height: 1;
 }
 h1 {
     font-size: 4.8rem;
@@ -46,6 +48,7 @@ img {
     max-width: 100%;
 }
 
+
 /**Utilidades**/
 .no-margin {
     margin: 0;
@@ -58,9 +61,210 @@ img {
 }
 
 /** Header **/
-.header {
+.webp .header {
+    background-image: url(../img/banner.webp);
+}
+
+.no-webp .header {
     background-image: url(../img/banner.jpg);
-    height: 68rem;
+}
+.header {
+    height: 40rem;
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center center;
+}
+.header_texto {
+    text-align: center;
+    color: var(--blanco);
+    margin-top: 10rem;
+}
+@media (min-width: 768px) {
+     .header_texto {
+        margin-top: 15rems;
+     }
+}
+.barra {
+    padding-top: 2rem;
+}
+
+@media (min-width: 768px) {
+     .barra {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+     }
+}
+.logo {
+    color: var(--blanco);
+}
+.logo_nombre {
+    font-weight: 400;
+}
+.logo_bold {
+    font-weight: 700;
+}
+@media (min-width: 768px) {
+    .navegacion{
+        display: flex;
+        gap: 1.4rem;
+    }
+}
+.navegacion__enlace {
+        display: block;
+        text-align: center;
+        font-size: 1.8rem;
+        color: var(--blanco);
+}
+ 
+/** Main **/
+
+ @media (min-width: 768px) {
+      .contenido-principal {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        column-gap: 4rem;
+      }
+ }
+ .entrada {
+    border-bottom: 1px solid var(--gris);
+    margin-bottom: 2rem;
+ }
+
+ .entrada:last-of-type {
+    border: none;
+    margin-bottom: 0;
+ }
+
+ /**botones**/
+
+.boton {
+    display: block;
+    font-family: var(--fuenteHeading);
+    color: var(--blanco);
+    text-align: center;
+    padding: 1rem 3rem;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    border: none;
+}
+@media (min-width: 768px) {
+ .boton {
+    display: inline-block;
+ }
+}
+.boton:hover {
+    cursor: pointer;
+}
+.boton--primario {
+    background-color: var(--negro);
+}
+.boton--secundario {
+    background-color: var(--primario);
+}
+
+/** sidebar **/
+.cursos {
+    list-style: none;
+}
+.widget-curso {
+    border-bottom: 1px solid var(--gris);
+    margin-bottom: 2rem;
+}
+.widget-curso:last-of-type {
+    border: none;
+    margin-bottom: 0;
+}
+.widget-curso__label {
+    font-family: var(--fuenteHeading);
+    font-weight: bold;
+}
+.widget-curso__info {
+    font-weight: 400;
+}
+.widget-curso__info,
+.widget-curso__label {
+    font-size: 2rem;
+}
+/** Footer**/
+
+.footer {
+    background-color: var(--negro);
+    padding: 2rem;
+    margin-top: 4rem;
+}
+
+/**Sobre Nosotros**/
+
+@media (min-width: 768px) {
+     .sobre-nosotros{
+        display: flex;
+        gap: 3rem;
+     }
+     .sobre-nosotros__imagen, .sobre-nosotros__texto {
+        flex-basis: 50%;
+     }
+}
+
+/** Cursos**/
+
+.curso {
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--gris);
+}
+@media (min-width: 768px) {
+   .curso {
+       display: grid;
+       grid-template-columns: 1fr 2fr;
+       column-gap: 2rem;
+    } 
+}
+.curso:last-of-type {
+    border: none;
+}
+
+.curso__label {
+    font-family: var(--fuenteHeading);
+    font-weight: bold;
+}
+.curso__informacion {
+    font-weight: 400;
+}
+.curso__informacion,
+.curso__label {
+    font-size: 2rem;
+}
+
+/**Contacto**/
+
+.contacto-bg {
+    background-image: url(../img/contacto.jpg);
+    height: 40rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.formulario {
+    background-color: var(--blanco);
+    margin: -20rem auto 0 auto;
+    width: 95%;
+    padding: 5rem;
+}
+
+.campos {
+    display: flex;
+    margin-bottom: 2rem;
+}
+label.campo__label {
+    flex: 0 0 9rem;
+    gap: 2rem;
+}
+.campo__field {
+    flex: 1;
+    border: 1px var(--gris);
+}
+.campo__field--textarea {
+    height: 20rem;
 }
